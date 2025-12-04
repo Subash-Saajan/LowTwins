@@ -57,12 +57,12 @@ export default function FashionCategory() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-10 md:py-20 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-10 md:py-20 bg-neutral-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div ref={headerRef} className="flex justify-between items-center mb-6 md:mb-8">
-          <h2 className="text-2xl md:text-5xl font-black tracking-tight">
-            CATEGORIES
+          <h2 className="text-2xl md:text-5xl font-black tracking-tight text-white">
+            SHOP THE <span className="text-red-500">DRIP</span>
           </h2>
         </div>
 
@@ -74,19 +74,19 @@ export default function FashionCategory() {
               href={`/category/${category.name.toLowerCase().replace(/\s+/g, "-")}`}
               className="group relative active:scale-[0.98] transition-transform"
             >
-              <div className="relative aspect-3/4 overflow-hidden bg-gray-100">
+              <div className="relative aspect-3/4 overflow-hidden bg-neutral-900">
                 <Image
                   src={category.image}
                   alt={category.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
               </div>
 
               {/* Category Name */}
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-                <h3 className="text-white text-lg md:text-2xl font-bold">
+                <h3 className="text-white text-lg md:text-2xl font-bold group-hover:text-red-500 transition-colors">
                   {category.name}
                 </h3>
               </div>

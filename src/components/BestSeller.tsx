@@ -56,14 +56,14 @@ export default function BestSeller() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-10 md:py-20 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-10 md:py-20 bg-neutral-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div ref={headerRef} className="flex justify-between items-center mb-6 md:mb-8">
-          <h2 className="text-2xl md:text-5xl font-black tracking-tight">
-            BEST SELLERS
+          <h2 className="text-2xl md:text-5xl font-black tracking-tight text-white">
+            DRIP PICKS
           </h2>
-          <Link href="/products" className="text-xs md:text-sm font-bold hover:underline">
+          <Link href="/products" className="text-xs md:text-sm font-bold text-red-500 hover:text-white transition-colors">
             VIEW ALL →
           </Link>
         </div>
@@ -76,7 +76,7 @@ export default function BestSeller() {
               href={`/product/${product.id}`}
               className="group active:scale-[0.98] transition-transform"
             >
-              <div className="relative aspect-3/4 bg-gray-100 overflow-hidden">
+              <div className="relative aspect-3/4 bg-neutral-900 overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -85,8 +85,8 @@ export default function BestSeller() {
                 />
               </div>
               <div className="mt-2 md:mt-3">
-                <p className="font-medium text-sm md:text-base truncate">{product.name}</p>
-                <p className="font-bold text-sm md:text-base">${product.price}</p>
+                <p className="font-medium text-sm md:text-base truncate text-white">{product.name}</p>
+                <p className="font-bold text-sm md:text-base text-red-500">${product.price}</p>
               </div>
             </Link>
           ))}

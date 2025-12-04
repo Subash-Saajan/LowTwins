@@ -42,11 +42,11 @@ export default function Newsletter() {
   };
 
   return (
-    <section ref={sectionRef} className="py-14 md:py-24 bg-black text-white overflow-hidden">
+    <section ref={sectionRef} className="py-14 md:py-24 bg-red-600 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={contentRef} className="max-w-xl mx-auto text-center">
           <h2 className="text-2xl md:text-5xl font-black tracking-tight mb-6 md:mb-8">
-            JOIN THE LIST
+            JOIN THE DRIP GANG
           </h2>
 
           <form
@@ -58,14 +58,14 @@ export default function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email"
-              className="flex-1 px-4 py-3.5 md:py-4 bg-transparent border border-white/30 text-white placeholder:text-gray-500 focus:outline-none focus:border-white transition-colors text-sm md:text-base"
+              className="flex-1 px-4 py-3.5 md:py-4 bg-black/30 border border-white/30 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors text-sm md:text-base"
               required
             />
             <button
               type="submit"
-              className="px-6 md:px-8 py-3.5 md:py-4 bg-white text-black font-bold hover:bg-gray-200 transition-all active:scale-95 text-sm md:text-base"
+              className="px-6 md:px-8 py-3.5 md:py-4 bg-black text-white font-bold hover:bg-neutral-900 transition-all active:scale-95 text-sm md:text-base"
             >
-              SUBSCRIBE
+              JOIN NOW
             </button>
           </form>
         </div>

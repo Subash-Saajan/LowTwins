@@ -3,22 +3,22 @@ import { products } from "@/data/products";
 
 export default function ProductsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Page Header */}
         <div className="mb-10">
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight">
-            ALL PRODUCTS
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">
+            ALL <span className="text-red-500">DRIP</span>
           </h1>
           <p className="text-gray-500 mt-2">
-            {products.length} products
+            {products.length} pieces
           </p>
         </div>
 
         {/* Filters Bar */}
-        <div className="flex flex-wrap justify-between items-center gap-4 mb-8 pb-6 border-b border-gray-100">
+        <div className="flex flex-wrap justify-between items-center gap-4 mb-8 pb-6 border-b border-neutral-800">
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 text-sm font-medium">
+            <button className="flex items-center gap-2 text-sm font-medium text-white">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -35,14 +35,14 @@ export default function ProductsPage() {
               Filter
             </button>
             <div className="flex gap-2">
-              {["All", "Jackets", "Shirts", "Pants", "Sweaters"].map(
+              {["All", "Hoodies", "Jackets", "Pants", "Tees"].map(
                 (category) => (
                   <button
                     key={category}
                     className={`px-4 py-2 text-sm font-medium transition-colors ${
                       category === "All"
-                        ? "bg-black text-white"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        ? "bg-red-600 text-white"
+                        : "bg-neutral-900 text-gray-400 hover:bg-neutral-800 hover:text-white"
                     }`}
                   >
                     {category}
@@ -53,7 +53,7 @@ export default function ProductsPage() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-500">Sort by:</span>
-            <select className="text-sm font-medium bg-transparent border-none focus:outline-none cursor-pointer">
+            <select className="text-sm font-medium bg-transparent border-none focus:outline-none cursor-pointer text-white">
               <option>Featured</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
@@ -71,7 +71,7 @@ export default function ProductsPage() {
 
         {/* Load More Button */}
         <div className="flex justify-center mt-12">
-          <button className="px-8 py-3 border-2 border-black text-black font-semibold hover:bg-black hover:text-white transition-colors">
+          <button className="px-8 py-3 border-2 border-red-600 text-red-500 font-semibold hover:bg-red-600 hover:text-white transition-colors">
             Load More
           </button>
         </div>

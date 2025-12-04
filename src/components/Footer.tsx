@@ -2,16 +2,16 @@ import Link from "next/link";
 
 const footerLinks = {
   Shop: [
-    { label: "New Arrivals", href: "/new-arrivals" },
-    { label: "Best Sellers", href: "/best-sellers" },
+    { label: "New Drops", href: "/new-arrivals" },
+    { label: "Drip Picks", href: "/best-sellers" },
     { label: "Sale", href: "/sale" },
-    { label: "All Products", href: "/products" },
+    { label: "All Pieces", href: "/products" },
   ],
   Categories: [
-    { label: "Men", href: "/man" },
-    { label: "Women", href: "/woman" },
-    { label: "Kids", href: "/kids" },
-    { label: "Accessories", href: "/accessories" },
+    { label: "Hoodies", href: "/category/hoodies" },
+    { label: "Jackets", href: "/category/jackets" },
+    { label: "Pants", href: "/category/pants" },
+    { label: "Tees", href: "/category/tees" },
   ],
   Help: [
     { label: "Customer Service", href: "/customer-service" },
@@ -68,20 +68,22 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100">
+    <footer className="bg-black border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-logo)' }}>
+              <span className="text-[9px] text-red-500 tracking-widest uppercase block text-left font-bold">
+                Keep it !
+              </span>
+              <span className="text-2xl font-bold tracking-tight text-white" style={{ fontFamily: 'var(--font-logo)' }}>
                 LowTwins
               </span>
             </Link>
             <p className="mt-4 text-sm text-gray-500 max-w-xs">
-              Modern fashion for the bold. Quality pieces from world-renowned
-              designers.
+              Dark drip for the bold. Premium streetwear for those who live the lifestyle.
             </p>
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
@@ -89,7 +91,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="text-gray-400 hover:text-black transition-colors"
+                  className="text-gray-500 hover:text-red-500 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
@@ -103,7 +105,7 @@ export default function Footer() {
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">
+              <h3 className="font-semibold text-sm uppercase tracking-wider mb-4 text-white">
                 {title}
               </h3>
               <ul className="space-y-3">
@@ -111,7 +113,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-500 hover:text-black transition-colors"
+                      className="text-sm text-gray-500 hover:text-red-500 transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -123,7 +125,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-100">
+        <div className="pt-8 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
               © {new Date().getFullYear()} LowTwins. All rights reserved.
@@ -131,19 +133,19 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy"
-                className="text-sm text-gray-500 hover:text-black transition-colors"
+                className="text-sm text-gray-500 hover:text-red-500 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-sm text-gray-500 hover:text-black transition-colors"
+                className="text-sm text-gray-500 hover:text-red-500 transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
                 href="/cookies"
-                className="text-sm text-gray-500 hover:text-black transition-colors"
+                className="text-sm text-gray-500 hover:text-red-500 transition-colors"
               >
                 Cookie Settings
               </Link>

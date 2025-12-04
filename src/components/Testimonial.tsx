@@ -54,40 +54,41 @@ export default function Testimonial() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-10 md:py-20 bg-neutral-100 overflow-hidden">
+    <section ref={sectionRef} className="py-10 md:py-20 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
           {/* Image */}
-          <div ref={imageRef} className="relative aspect-[4/5] overflow-hidden bg-gray-200">
+          <div ref={imageRef} className="relative aspect-[4/5] overflow-hidden bg-neutral-900">
             <Image
-              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&h=1000&fit=crop"
-              alt="Fashion"
+              src="https://images.unsplash.com/photo-1601412436009-d964bd02edbc?w=800&h=1000&fit=crop"
+              alt="Drip Fashion"
               fill
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-black/20" />
           </div>
 
           {/* Content */}
           <div ref={contentRef} className="space-y-6 md:space-y-8 lg:pl-8">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[0.95]">
-              STYLE IS
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[0.95] text-white">
+              DRIP IS
               <br />
-              A WAY TO
+              NOT A
               <br />
-              SAY WHO
+              <span className="text-red-500">CHOICE</span>
               <br />
-              YOU ARE
+              IT&apos;S A LIFESTYLE
             </h2>
 
             {/* Stats */}
             <div className="flex gap-8 md:gap-12 pt-4 md:pt-6">
               <div className="stat-item">
-                <p className="text-3xl md:text-5xl font-black">12K+</p>
-                <p className="text-xs md:text-sm text-gray-500">Customers</p>
+                <p className="text-3xl md:text-5xl font-black text-red-500">12K+</p>
+                <p className="text-xs md:text-sm text-gray-500">Drip Gang</p>
               </div>
               <div className="stat-item">
-                <p className="text-3xl md:text-5xl font-black">500+</p>
-                <p className="text-xs md:text-sm text-gray-500">Products</p>
+                <p className="text-3xl md:text-5xl font-black text-white">500+</p>
+                <p className="text-xs md:text-sm text-gray-500">Dark Pieces</p>
               </div>
             </div>
           </div>

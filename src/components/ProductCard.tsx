@@ -9,7 +9,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/product/${product.id}`} className="group cursor-pointer block">
-      <div className="relative aspect-[3/4] bg-gray-100 overflow-hidden image-hover-zoom">
+      <div className="relative aspect-[3/4] bg-neutral-900 overflow-hidden image-hover-zoom">
         <Image
           src={product.image}
           alt={product.name}
@@ -18,19 +18,19 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
         {/* Badges */}
         {product.isNew && (
-          <span className="absolute top-3 left-3 bg-black text-white text-xs px-2 py-1 font-medium">
-            NEW
+          <span className="absolute top-3 left-3 bg-red-600 text-white text-xs px-2 py-1 font-medium">
+            NEW DROP
           </span>
         )}
         {product.isBestSeller && (
-          <span className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 font-medium border border-black">
-            BEST SELLER
+          <span className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 font-medium">
+            DRIP PICK
           </span>
         )}
         {/* Quick Actions */}
         <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
           <div className="flex gap-2">
-            <button className="flex-1 bg-white text-black py-2 text-xs font-semibold hover:bg-gray-100 transition-colors">
+            <button className="flex-1 bg-red-600 text-white py-2 text-xs font-semibold hover:bg-red-700 transition-colors">
               Quick Add
             </button>
             <button className="bg-white text-black p-2 hover:bg-gray-100 transition-colors" aria-label="Add to wishlist">
@@ -55,8 +55,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         <p className="text-xs text-gray-500 uppercase tracking-wide">
           {product.category}
         </p>
-        <p className="text-sm font-medium mt-1 truncate">{product.name}</p>
-        <p className="text-sm font-semibold mt-1">${product.price}</p>
+        <p className="text-sm font-medium mt-1 truncate text-white">{product.name}</p>
+        <p className="text-sm font-semibold mt-1 text-red-500">${product.price}</p>
       </div>
     </Link>
   );

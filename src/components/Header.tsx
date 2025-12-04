@@ -5,14 +5,13 @@ import Link from "next/link";
 import gsap from "gsap";
 
 const navItems = [
-  { label: "Man", href: "/man" },
-  { label: "Woman", href: "/woman" },
-  { label: "Kids", href: "/kids" },
+  { label: "Hoodies", href: "/category/hoodies" },
+  { label: "Jackets", href: "/category/jackets" },
+  { label: "Pants", href: "/category/pants" },
 ];
 
 const rightNavItems = [
   { label: "Account", href: "/account" },
-  { label: "Wishlist", href: "/wishlist" },
   { label: "Search", href: "/search" },
 ];
 
@@ -53,7 +52,7 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header ref={headerRef} className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header ref={headerRef} className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 md:h-20">
           {/* Left Navigation */}
@@ -62,7 +61,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
+                className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-red-500 after:transition-all hover:after:w-full"
               >
                 {item.label}
               </Link>
@@ -71,7 +70,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 -ml-2 active:scale-95 transition-transform"
+            className="md:hidden p-2 -ml-2 active:scale-95 transition-transform text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -102,10 +101,10 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 active:scale-95 transition-transform">
-            <span className="text-[9px] md:text-[10px] text-gray-400 tracking-widest uppercase block text-left">
+            <span className="text-[9px] md:text-[10px] text-red-500 tracking-widest uppercase block text-left font-bold">
               Keep it !
             </span>
-            <span className="text-lg md:text-2xl font-bold tracking-tight block" style={{ fontFamily: 'var(--font-logo)' }}>
+            <span className="text-lg md:text-2xl font-black tracking-tight block text-white" style={{ fontFamily: 'var(--font-logo)' }}>
               LowTwins
             </span>
           </Link>
@@ -116,21 +115,21 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
+                className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-red-500 after:transition-all hover:after:w-full"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               href="/bag"
-              className="text-sm font-medium text-gray-700 hover:text-black transition-colors"
+              className="text-sm font-medium text-white bg-red-600 px-4 py-2 hover:bg-red-700 transition-colors"
             >
               Bag ({cartCount})
             </Link>
           </nav>
 
           {/* Mobile Cart */}
-          <Link href="/bag" className="md:hidden p-2 -mr-2 active:scale-95 transition-transform">
+          <Link href="/bag" className="md:hidden p-2 -mr-2 active:scale-95 transition-transform text-white">
             <div className="relative">
               <svg
                 className="w-6 h-6"
@@ -146,7 +145,7 @@ export default function Header() {
                 />
               </svg>
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-4 h-4 bg-black text-white text-xs rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
@@ -159,25 +158,25 @@ export default function Header() {
       {isMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="md:hidden border-t border-gray-100 bg-white overflow-hidden"
+          className="md:hidden border-t border-neutral-800 bg-black overflow-hidden"
         >
           <div className="px-4 py-4 space-y-1">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="block text-lg font-medium text-gray-700 hover:text-black py-3 active:bg-gray-50 transition-colors"
+                className="block text-lg font-medium text-gray-300 hover:text-white py-3 active:bg-neutral-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="border-t border-gray-100 pt-3 mt-3">
+            <div className="border-t border-neutral-800 pt-3 mt-3">
               {rightNavItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="block text-lg font-medium text-gray-700 hover:text-black py-3 active:bg-gray-50 transition-colors"
+                  className="block text-lg font-medium text-gray-300 hover:text-white py-3 active:bg-neutral-900 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
